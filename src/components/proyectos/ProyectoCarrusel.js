@@ -2,11 +2,12 @@ import React, {useRef, useEffect, useCallback} from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
 import { FaAngleRight } from 'react-icons/fa';
 // import styled from 'styled-components';
-import { Box, Img } from '@chakra-ui/react';
+import { Box, Img, useColorModeValue } from '@chakra-ui/react';
 
 
 export const ProyectoCarrusel = ({children}) => {
 
+	// const navBackgroundColor = useColorModeValue(  'brand.darkBlue', 'brand.bone');
 	const slideshow = useRef(null);
 
 	const siguiente = () => {
@@ -66,10 +67,10 @@ export const ProyectoCarrusel = ({children}) => {
 	return (
 		<Box pos='relative' w={{base:'100%', md:'70%'}} m='auto' mt='3rem'  borderRadius={{md:'2rem'}} userSelect='none' overflow='hidden'>
 
-                <Box  zIndex={2}  display='flex' alignItems='center' pos='absolute'   h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopLeftRadius='2rem' borderBottomLeftRadius='2rem'  onClick={anterior}>
+                <Box  color='brand.bone' zIndex={2}  display='flex' alignItems='center' pos='absolute'   h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopLeftRadius='2rem' borderBottomLeftRadius='2rem'  onClick={anterior}>
                    <FaAngleLeft  fontSize='5rem'  />
                  </Box>
-                 <Box  zIndex={2} display='flex' alignItems='center'  pos='absolute' right='0%' h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopRightRadius='2rem' borderBottomRightRadius='2rem'  onClick={siguiente}>
+                 <Box  color='brand.bone' zIndex={2} display='flex' alignItems='center'  pos='absolute' right='0%' h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopRightRadius='2rem' borderBottomRightRadius='2rem'  onClick={siguiente}>
                     <FaAngleRight fontSize='5rem'  /> 
                 </Box>
 			
@@ -77,7 +78,7 @@ export const ProyectoCarrusel = ({children}) => {
 			<Box  display='flex' flexWrap='nowrap'  ref={slideshow} >
                 {children.map((imagen, index) => 
 
-                                            <Box  minWidth='100%'  transition='.3s ease all' pos='relative'  h='45rem'>
+                                            <Box key={index} minWidth='100%'  transition='.3s ease all' pos='relative'  h='45rem'>
                                                     <Img  align='center' objectFit='cover' w='100%' h='100%'   src={imagen.image} key={index} ></Img>
                                             </Box>
                     )}

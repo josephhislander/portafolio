@@ -5,10 +5,13 @@ import { FiMoon } from 'react-icons/fi';
 import { Logo } from './Logo';
 import { useSpring, animated, config, easings} from 'react-spring';
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useTranslation } from 'react-i18next';
 
 
-export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggleAnimation, Cancel}) => {
+export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggleAnimation, Cancel,lenguage, setLenguage }) => {
 
+  const [t, i18n] = useTranslation("global");
+ 
   const [animationCancel, setAnimationCancel] = useState(true)
   const { colorMode, toggleColorMode } = useColorMode();
   const botonFuenteColor = useColorModeValue( 'brand.blue','brand.bone');
@@ -17,10 +20,14 @@ export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggl
   const AnimatedButton = animated(Button);
   const AnimatedBox = animated(Box);
   const AnimatedStack = animated(Stack);
-  const buttons = ['INICIO','ACERCA DE MI','PROYECTOS','CONTACTO'];
+  // const buttons = ['INICIO','ACERCA DE MI','PROYECTOS','CONTACTO'];
+  const buttonstraduction =   t("home.navButtons");
+  const buttons = buttonstraduction.split("  ");
   const sections = ['home','about','proyectos','contacto'];
-  
+  // console.log(buttonSplit)
+
   useEffect(() => {
+    // console.log(buttons1)
     const handleScroll = ( ) => { 
         setAnimationCancel(false);
   }
@@ -52,6 +59,12 @@ export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggl
     config : { mass: 1, tension: 280, friction: 60 , easing: easings.easeInElastic, },
   })
 
+  const lenguageControl = () => {
+    setLenguage(!lenguage);
+
+    lenguage ? i18n.changeLanguage("en")
+            : i18n.changeLanguage("es")
+  }
 
   return (
       <Box  pos="fixed"  bg={{base: navBackgroundColorTrans, md:  navBackgroundColor}}  display='flex' flexDirection={{base:'column', md:'row'}} flexGrow={{base:'1', md:'0'}} justifyContent={{base:'space-between'}} h={{base: '100vh', md: 'auto'}}  w='100%'    boxShadow='md'    p='2rem'  >
@@ -83,6 +96,9 @@ export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggl
       <Stack direction='row'  justifyContent='center'  align='center' flexGrow={{base:'1', md:'0'}}>
             <AnimatedButton style={toggleAnimation ? props2 :{border: 'none'}} onClick={toggleColorMode} variant='ghost' border='none' fontSize='2.3rem'>
             {colorMode === 'light' ? <FiSun  color='#ac7d03' /> : <FiMoon  color='#707070' __focus={{borde : 'none'}}/> }
+            </AnimatedButton>
+            <AnimatedButton w='2rem' color='#707070' style={toggleAnimation ? props2 :{border: 'none'}} onClick={lenguageControl}  variant='ghost' border='none' fontSize='2rem'>
+            {lenguage ? 'Es': 'En'}
             </AnimatedButton>
       </Stack>
     </Box>

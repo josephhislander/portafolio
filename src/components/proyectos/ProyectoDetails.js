@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import { Box, Heading, Icon, Skeleton, Text, useColorModeValue } from '@chakra-ui/react';
 import { FaAngleDown,FaAngleUp } from 'react-icons/fa';
 import { AccordionItem, AccordionButton, AccordionPanel } from '@chakra-ui/react';
-import { animated, config, useSpring } from 'react-spring';
+import { animated,  useSpring } from 'react-spring';
 import {ProyectoCarrusel} from '../../components/proyectos/ProyectoCarrusel'
+import { useTranslation } from 'react-i18next';
 
 export const ProyectoDetails = ({origen,funcionalidades,otrasTecnologias , animation, Imgs, data,title}) => {
 
     const barColor = useColorModeValue( 'brand.blue','brand.gray' );
+    const [t] = useTranslation("global");
     
-
+    const Funcionalidades = funcionalidades.split("$");
     const AnimatedBox = animated(Box);  
     const spring = useSpring({
         from:animation &&  {y: -5, opacity: 1},
@@ -38,11 +40,11 @@ export const ProyectoDetails = ({origen,funcionalidades,otrasTecnologias , anima
                     <AccordionPanel p='0'>
 
                         <Box pr='15%' pl='15%'>
-                            <Heading as='h3'>Origen de la aplicación</Heading>
+                            <Heading as='h3'>{t("projectsMain.titlesOfProject.ApplicationSource")}</Heading>
                             <Text mt='2rem'>{origen}</Text>
-                            <Heading as='h3' mt='2rem'>Funcionalidades:</Heading>
+                            <Heading as='h3' mt='2rem'>{t("projectsMain.titlesOfProject.Features")}</Heading>
 
-                            {funcionalidades.map((funcionalidad, i) =>  <Text mt='2rem' key={i} > {funcionalidad}</Text> )}
+                            {Funcionalidades.map((funcionalidad, i) =>  <Text mt='2rem' key={i} > {funcionalidad}</Text> )}
                         </Box>
                        
                     
@@ -53,7 +55,7 @@ export const ProyectoDetails = ({origen,funcionalidades,otrasTecnologias , anima
                         
                             { otrasTecnologias  &&
                                 <Box  pr='15%' pl='15%'>
-                                    <Heading mt='2rem' mb='1rem' as='h3'>Otras herramientas y librerias utilizadas:</Heading>
+                                    <Heading mt='2rem' mb='1rem' as='h3'>{t("projectsMain.titlesOfProject.OtherToolsAndLibrariesUsed")}</Heading>
                                     {otrasTecnologias.map((tecnologia,i) => <Text  key={i}>{tecnologia}</Text> )}
                                  </Box>
                             }

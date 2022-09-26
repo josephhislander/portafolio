@@ -48,10 +48,10 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
     })
 
   return (
-    <Box  display='flex' cursor='pointer' onClick={() => setFlipped(!flipped)}  alignSelf='center' flexGrow='1'   order= { left ? 0 : 1 } w={{base:'100%', lg: '100px'}}   >  
+    <Box   display='flex' cursor='pointer' onClick={() => setFlipped(!flipped)}  alignSelf='center' flexGrow='1'   order= { left ? 0 : 1 } w={{base:'100%', lg: '100px'}}   >  
 
         
-        <AnimatedBox style={{
+        <AnimatedBox w='100%' style={{
             opacity,
             transform,
             rotateX: "180deg"

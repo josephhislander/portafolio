@@ -12,16 +12,17 @@ import {
     AlertDialogOverlay,
   } from '@chakra-ui/react'
 import { animated, config, useSpring } from 'react-spring';
+import { useTranslation } from 'react-i18next';
 
 
 
 export const FormularioContacto = () => {
 
+  const [t] = useTranslation("global");
     const [animation, setAnimation] = useState(false)
   useEffect(() => {
     
     const handleScroll = ( ) => { 
-        console.log(window.pageYOffset);
       if (window.pageYOffset >= 1900) {
 
         setAnimation(true);
@@ -79,15 +80,15 @@ export const FormularioContacto = () => {
                <form  ref={form} onSubmit={sendEmail} id='form' >
                     <FormControl color='brand.darkBlue' isRequired  >
                         <Box display={{base:'block', lg:'flex'}} gap='1rem' alignItems='center' >
-                            <AnimatedFormLabel  style={spring} fontSize='1.8rem' htmlFor='name'>Nombre:</AnimatedFormLabel>
+                            <AnimatedFormLabel  style={spring} fontSize='1.8rem' htmlFor='name'>{t("contact.contactForm.name")}</AnimatedFormLabel>
                             <Input id='name' fontSize='1.5rem' borderColor='brand.gray'    _hover={{borderColor: 'brand.gray'}} size='lg' name='name'/>
                             <AnimatedFormLabel style={spring} fontSize='1.8rem' htmlFor='email'>Email:</AnimatedFormLabel>
                             <Input id='email' type='email' name='email' fontSize='1.5rem' borderColor='brand.gray'   _hover={{borderColor: 'brand.gray'}} size='lg'/>
                         </Box>
-                        <AnimatedFormLabel style={spring} fontSize='1.8rem' htmlFor='name'>Mensaje:</AnimatedFormLabel>
+                        <AnimatedFormLabel style={spring} fontSize='1.8rem' htmlFor='name'>{t("contact.contactForm.message")}</AnimatedFormLabel>
                         <Textarea fontSize='1.5rem' borderColor='brand.gray'   _hover={{borderColor: 'brand.gray'}} size='lg' name='message'/>
                         <Stack align='center ' mt='2rem'>
-                            <AnimatedButton style={spring2} fontSize='1.5rem' type='submit' size='lg' colorScheme='blue' variant='solid' >Enviar</AnimatedButton>
+                            <AnimatedButton style={spring2} fontSize='1.5rem' type='submit' size='lg' colorScheme='blue' variant='solid' >{t("contact.contactForm.send")}</AnimatedButton>
                         </Stack>
                     </FormControl>
                 </form>

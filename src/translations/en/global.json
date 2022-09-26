@@ -1,0 +1,56 @@
+
+ {
+    "home": {
+        "navButtons": "HOME  ABOUT ME  PROJECTS  CONTACT",
+        "welcome": "Hello! I'm Joseph"
+    },
+
+    "about": {
+        "aboutMe": "I am a self-taught software developer, an eternal learner, a fan of efficiency and automation, focused on optimizing processes and solving needs through software development using the Javascript language and the ecosystem that surrounds it as tools, the main technologies that I serve to create and grow projects are:",
+         
+        "softSkills": "Problem solving  teamwork  Responsibility  Adaptability  Honesty"
+    },
+
+    "projectsMain": {
+        "title" : "Projects",
+        "titlesOfProject": {
+            "MainTechnologiesUsed": "Main technologies used:",
+            "ApplicationSource": "Application Source:",
+            "Features": "Features:",
+            "OtherToolsAndLibrariesUsed": "Other tools and libraries used:"
+            },
+        "projects" : {
+            "ShoppingList" : {
+                "shortDescription": "\u00A0 It is a web application that allows you to create and manage shopping lists, budgets and expenses, which has a user registration system and permanent storage.",
+                "origen": "\u00A0 The process of going shopping with a traditional list and a budget in mind can become tedious, going through the aisles of the supermarket with a sheet or a digital list in one hand and a calculator in the other, to go one way marking the products you put in your cart and on the other calculating the cost of these trying to avoid exceeding your budget ends up being exhausting, ShoppingList automates this process through an easy-to-use interface that allows you to access it from a phone, tablet or laptop with Internet connection, in a personalized way you can maintain and manage as many lists as you want by logging into the app.",
+                "functionalities": "- User registration and login: it has a user registration system that allows you to do it directly from shoppingList or through the google API by pressing just one button, in the same way you can log in both ways and access your lists the which will only be available to your registered and identified user.$ - Create shopping lists: through the (+) button you can create and customize new shopping lists, assigning them a title, the products you want them to contain and their quantity. $ - Manage shopping lists: from the main screen you will be able to observe, delete, and edit the lists previously created. When you find a product in the supermarket and place it in your cart, you can mark the product on the list, assign a price and a tax if necessary, automatically the total cost of the product. act or products will be debited from the initial budget and will indicate in real time what your remaining budget is, when the budget approaches zero the application will send you an alert notifying you, in the same way when the budget is exhausted.$ - Other features: during the Using the list you can modify your budget at any time, you can also delete and add products if necessary."
+            },
+            "Tres en Raya" : {
+                "shortDescription": "\u00A0 It is a web application that virtualizes the classic XO game or also known as three in a row, it has a tutorial and a game area.",
+                "origen": " \u00A0 Today there are more people who carry a smartphone, than a pen and paper in their pocket, the traditional Tic Tac Toe is a game for two players that consists of completing a line of three Xs or three O's (depending on the symbol you have chosen and represents him in the game), before his opponent on a 3x3 square board that used to be drawn on paper, in which each participant will have an interspersed turn to position their symbol and use their ability to draw a line first. of three that will grant you victory, this entertaining game will now be available digitally with this app which can be accessed through your phone, tablet or laptop and have a fun time with your friends.",
+                "functionalities": "- Tutorial: it has an illustrated guide that teaches you the bases and principles of the game.$ - Board: the game area has a board where it is developed and allows each player to mark their symbol interspersed.$ - Counters: To increase the dynamics of the game, an objective has been established: the first player to accumulate 5 points wins the game, so we can see counters on the sides of the boards for each participant that keep track of the points accumulated.$ - Other features: located Below the board we can find a set of buttons that allow us to return to the home screen, undo a move, reset the counters, or return to the tutorial to remember the rules of the game."
+            },
+            "Ahorcado" : {
+                "shortDescription": "\u00A0 It is a web application that virtualizes the classic hangman game, a guessing game for two players, it has a tutorial and a game area.",
+                "origen": " \u00A0 Hangman is a guessing game for two players in which each participant has a different role, the first must choose a word and hide it without his opponent realizing it, the second must try to guess it before his opportunities run out, all this is carried out in a didactic way through the paper representation of the hidden word by means of short horizontal lines that represent each of the letters that are part of the mystery, they will be a key piece of information for the guesser to deduce which is the word that is hidden , every time he made a mistake, a part of the drawing of a small and unlucky character made of sticks will be drawn until the illustration of the hanged man is completed. In this case, the guesser opens the game, if on the contrary his decisions are more successful, he will end up discovering the mystery and winning the game saving our stickmate, this App virtualizes this classic game to which you can access through your phone, tablet or laptop and have a fun time with your friends.",
+                "functionalities": "- Tutorial: It has an illustrated guide that teaches you the basics and principles of the game.$- Game area: The game area has a word hider, a drawing area and an on-screen keyboard that allows you to indicate the chosen letter .$ - Word hider: allows you to write a word and pressing the hide button will hide it and draw the corresponding spaces that will indicate to the rival how many letters the riddle contains.$ - Drawing area: in this space the hanged man will be drawn each time an incorrect letter is typed.$ - On-screen keyboard: all the letters that we will need are drawn on the screen within reach of a click or touch.$ - Other functions: in the game area when pressing the app logo we will redirect to the home screen from where we can access the tutorial again if necessary."
+            }
+
+        }
+    },
+
+    "contact": {
+        "contactForm" : {
+            "name": "Name:",
+            "email": "Email:",
+            "message": "Message:",
+            "send": "Send"
+        },
+        "contactFoot": {
+            "create": "Created by me - 2022",
+            "developed": "Developed with"
+        }
+    }
+}
+
+

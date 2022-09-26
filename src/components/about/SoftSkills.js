@@ -7,15 +7,23 @@ import { FaBolt } from "react-icons/fa";
 import { FaPeopleCarry } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { animated, config, useSpring, useTrail } from 'react-spring';
+import { useTranslation } from 'react-i18next';
 
 export const SoftSkills = ({animation}) => {
 
+   const [t, i18n] = useTranslation("global");
+
+
+   const softSkillsTraduction = t("about.softSkills")
+   const softSkillSplit = softSkillsTraduction.split("  ")
+   
+
     const data = [
-      { key: '1', icon:<FaStar />, skill: 'Resolución de problemas'},
-      { key: '2', icon:<FaPeopleCarry />, skill: 'Trabajo en equipo'},
-      { key: '3', icon:<FaClock />, skill: 'Responsabilidad'},
-      { key: '4', icon:<FaBolt />, skill: 'Adaptabilidad'},
-      { key: '5', icon:<FaHandshake />, skill: 'Honestidad'},
+      { key: '0', icon:<FaStar />, skill: softSkillSplit[0]},
+      { key: '1', icon:<FaPeopleCarry />, skill: softSkillSplit[1]},
+      { key: '2', icon:<FaClock />, skill: softSkillSplit[2]},
+      { key: '3', icon:<FaBolt />, skill: softSkillSplit[3]},
+      { key: '4', icon:<FaHandshake />, skill: softSkillSplit[4]},
     ]
 
     const trail = useTrail(data.length, { 

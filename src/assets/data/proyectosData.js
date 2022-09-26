@@ -31,6 +31,11 @@ import  IconHtml  from '../Iconos/html-5.png';
 import  IconBootstrap  from '../Iconos/bootstrap.png';
 import  IconMongoDB  from '../Iconos/mongoDB.png';
 import  IconCss  from '../Iconos/css-3.png';
+// import { useTranslation } from 'react-i18next';
+
+
+// const [t] = useTranslation("global");
+
 
 export const proyectos = [
     {

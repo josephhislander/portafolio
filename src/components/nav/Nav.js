@@ -9,6 +9,7 @@ import { animated, config, easings, useSpring } from "react-spring";
 export  const Nav =  () => {
 
     const AnimatedBox = animated(Box);
+    const [lenguage, setLenguage] = useState(true)
     const [toggleMenu, setToggleMenu] = useState(false);
     const [toggleAnimation, setToggleAnimation] = useState(true);
     const [Cancel, setCancel] = useState(false)
@@ -44,7 +45,7 @@ export  const Nav =  () => {
         <AnimatedBox pos={'relative'} zIndex={1} >
            { toggleMenu &&
             <AnimatedBox style={ spring }>
-              <ButtonsNav  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} toggleAnimation= {toggleAnimation} setToggleAnimation={setToggleAnimation} Cancel={Cancel} />
+              <ButtonsNav  lenguage={lenguage} setLenguage={setLenguage} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} toggleAnimation= {toggleAnimation} setToggleAnimation={setToggleAnimation} Cancel={Cancel} />
             </AnimatedBox>
           } 
 
