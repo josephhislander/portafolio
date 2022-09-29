@@ -30,8 +30,8 @@ export const Welcome = () => {
       } else {
         options = {
           strings: [
-            saludoTraduction + '\n web developer',
-            saludoTraduction + '\n software developer'
+            saludoTraduction + ',\n web developer',
+            saludoTraduction + ',\n software developer'
         ],
         typeSpeed: 70,
         backSpeed: 70,

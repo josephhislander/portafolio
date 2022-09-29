@@ -79,7 +79,7 @@ export const ProyectoCarrusel = ({children}) => {
                 {children.map((imagen, index) => 
 
                                             <Box key={index} minWidth='100%'  transition='.3s ease all' pos='relative'  h='45rem'>
-                                                    <Img  align='center' objectFit='cover' w='100%' h='100%'   src={imagen.image} key={index} ></Img>
+                                                    <Img  align='center' objectFit='cover' w='100%' h='40%'   src={imagen.image} key={index} ></Img>
                                             </Box>
                     )}
 			</Box>
