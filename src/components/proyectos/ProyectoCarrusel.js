@@ -67,10 +67,10 @@ export const ProyectoCarrusel = ({children}) => {
 	return (
 		<Box pos='relative' w={{base:'100%', md:'70%'}} m='auto' mt='3rem'  borderRadius={{md:'2rem'}} userSelect='none' overflow='hidden'>
 
-                <Box  color='brand.bone' zIndex={2}  display='flex' alignItems='center' pos='absolute'   h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopLeftRadius='2rem' borderBottomLeftRadius='2rem'  onClick={anterior}>
+                <Box  color='brand.bone' zIndex={2}  display='flex' alignItems='center' pos='absolute'   h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopLeftRadius={{md:'2rem'}} borderBottomLeftRadius={{md:'2rem'}}  onClick={anterior}>
                    <FaAngleLeft  fontSize='5rem'  />
                  </Box>
-                 <Box  color='brand.bone' zIndex={2} display='flex' alignItems='center'  pos='absolute' right='0%' h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopRightRadius='2rem' borderBottomRightRadius='2rem'  onClick={siguiente}>
+                 <Box  color='brand.bone' zIndex={2} display='flex' alignItems='center'  pos='absolute' right='0%' h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopRightRadius={{md:'2rem'}} borderBottomRightRadius={{md:'2rem'}}  onClick={siguiente}>
                     <FaAngleRight fontSize='5rem'  /> 
                 </Box>
 			
@@ -78,8 +78,8 @@ export const ProyectoCarrusel = ({children}) => {
 			<Box  display='flex' flexWrap='nowrap'  ref={slideshow} >
                 {children.map((imagen, index) => 
 
-                                            <Box key={index} minWidth='100%'  transition='.3s ease all' pos='relative'  h='45rem'>
-                                                    <Img  align='center' objectFit='cover' w='100%' h='40%'   src={imagen.image} key={index} ></Img>
+                                            <Box key={index} minWidth='100%'  transition='.3s ease all' pos='relative'  h={{ base:'19rem', md:'45rem'}}>
+                                                    <Img  align='center' objectFit='cover' w='100%' h='100%'   src={imagen.image} key={index} ></Img>
                                             </Box>
                     )}
 			</Box>

@@ -29,7 +29,7 @@ export const AboutMain = () => {
     }, [])
 
   return (
-    <Box id='about' pr='15%' pl='15%' pt='12rem' minH={{base:'115rem', lg:'100vh'}} >
+    <Box id='about' pr='15%' pl='15%' pt='12rem' minH={{base:'113rem', lg:'100vh'}} >
         <Text color={fuenteColor}  textAlign='justify' >
         {'\u00A0'+ t("about.aboutMe")} 
         </Text>
