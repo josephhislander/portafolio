@@ -44,15 +44,15 @@ const customComponents = {
     ghost: {
       
      
-          _hover: {
+          // _hover: {
            
-            borderBottom: '0.5px solid #BBE1FA',
-            bg:'none',
-          },
-          _active:{
-            bg:'none',
-            color: 'brand.lightBlue'
-          }
+          //   borderBottom: '0.5px solid #BBE1FA',
+          //   bg:'none',
+          // },
+          // _active:{
+          //   bg:'none',
+          //   color: 'brand.lightBlue'
+          // }
         } 
       }
       ,

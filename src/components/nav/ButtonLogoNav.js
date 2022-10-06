@@ -5,7 +5,7 @@ import { Logo } from './Logo';
 
 
 export const 
-ButtonLogoNav = ({setToggleMenu, toggleMenu, setCancel, Cancel}) => {
+ButtonLogoNav = ({toggleMenuM, setToggleMenuM, setToggleMenu, toggleMenu, setCancel, Cancel}) => {
 
     const AnimatedBox = animated(Box);
     const spring = useSpring({
@@ -14,10 +14,12 @@ ButtonLogoNav = ({setToggleMenu, toggleMenu, setCancel, Cancel}) => {
         config : { mass: 1, tension: 280, friction: 60 , easing: easings.easeInElastic, },
       })
 
+      
+
     return(
         <Box ml='2rem' mt='2rem'    pos='fixed' > 
             <AnimatedBox style={spring}>
-                        <Logo Cancel={Cancel} setCancel={setCancel} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
+                        <Logo toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM} Cancel={Cancel} setCancel={setCancel} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
             </AnimatedBox>
         </Box>
 

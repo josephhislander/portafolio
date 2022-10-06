@@ -8,7 +8,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { useTranslation } from 'react-i18next';
 
 
-export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggleAnimation, Cancel,lenguage, setLenguage }) => {
+export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMenu, toggleAnimation, setToggleAnimation, Cancel,lenguage, setLenguage }) => {
 
   const [t, i18n] = useTranslation("global");
  
@@ -66,30 +66,40 @@ export const ButtonsNav = ({setToggleMenu, toggleMenu, toggleAnimation, setToggl
             : i18n.changeLanguage("es")
   }
 
+  const handleToggleMenuMovil = () => {
+
+
+      console.log('hola')
+      setToggleMenuM(false)
+      setToggleMenu(!toggleMenu); 
+    
+  }
+
   return (
       <Box  pos="fixed"  bg={{base: navBackgroundColorTrans, md:  navBackgroundColor}}  display='flex' flexDirection={{base:'column', md:'row'}} flexGrow={{base:'1', md:'0'}} justifyContent={{base:'space-between'}} h={{base: '100vh', md: 'auto'}}  w='100%'    boxShadow='md'    p='2rem'  >
 
       <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ props3 }>
-         <Logo    setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
+         <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
       </AnimatedBox>
 
-      <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'10rem', md:'3rem'}}  flexGrow='1' pt={{base:'3rem', md:'initial'}} >
+      <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m='2rem'  fontFamily='Roboto Slab, Time new romans' spacing={{base:'10rem', md:'3rem'}}  flexGrow='1' pt={{base:'3rem', md:'initial'}} >
             {
-              buttons.map((button, i) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={i} >
+              buttons.map((button, index) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
 
-
+              
                  <Link
                   activeClass="active"
-                  to={sections[i]}
+                  to={sections[index]}
                   spy={true}
                   smooth={true}
                   // offset={-70}
                   duration={1000}
+                  onClick={ handleToggleMenuMovil}
                 > 
                   {button}
                 </Link>
 
-              </AnimatedButton> )
+              </AnimatedButton > )
             }
       </AnimatedStack>
 
