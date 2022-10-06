@@ -17,7 +17,7 @@ ButtonLogoNav = ({toggleMenuM, setToggleMenuM, setToggleMenu, toggleMenu, setCan
       
 
     return(
-        <Box ml='2rem' mt='2rem'    pos='fixed' > 
+        <Box ml='2rem' mt='2rem'    pos={{base: 'relative', md:'fixed'}} > 
             <AnimatedBox style={spring}>
                         <Logo toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM} Cancel={Cancel} setCancel={setCancel} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
             </AnimatedBox>
