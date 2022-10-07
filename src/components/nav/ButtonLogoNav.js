@@ -13,11 +13,10 @@ ButtonLogoNav = ({toggleMenuM, setToggleMenuM, setToggleMenu, toggleMenu, setCan
         to:{ opacity: 1, rotateZ: 360 },
         config : { mass: 1, tension: 280, friction: 60 , easing: easings.easeInElastic, },
       })
-
       
 
     return(
-        <Box ml='2rem' mt='2rem'    pos={{base: 'relative', md:'fixed'}} > 
+        <Box ml='2rem' mt='2rem'    pos='fixed' w={{base:'10rem', md:'7rem'}} > 
             <AnimatedBox style={spring}>
                         <Logo toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM} Cancel={Cancel} setCancel={setCancel} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
             </AnimatedBox>

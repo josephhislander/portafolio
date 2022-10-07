@@ -14,22 +14,17 @@ export const AboutMain = () => {
     
       const handleScroll = ( ) => { 
         if (window.pageYOffset >= 600) {
-          // console.log(animation)
           setAnimation(true);
-          // console.log(animation)
-        } else {
-          // setAnimation(false)
-        }
+        } 
       }
       window.addEventListener('scroll', handleScroll);
-  
       return () => {
         window.removeEventListener('scroll', handleScroll);
     }
     }, [])
 
   return (
-    <Box id='about' pr='15%' pl='15%' pt='12rem' minH={{base:'112rem', lg:'100vh'}} >
+    <Box id='about' pr='15%' pl='15%' pt='12rem' minH={{base:'115rem', lg:'100vh'}} >
         <Text color={fuenteColor}  textAlign='justify' >
         {'\u00A0'+ t("about.aboutMe")} 
         </Text>

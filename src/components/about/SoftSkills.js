@@ -27,14 +27,14 @@ export const SoftSkills = ({animation}) => {
     ]
 
     const trail = useTrail(data.length, { 
-      from: animation && {  x:150, opacity: 0}, 
+      from: animation && {  x:55, opacity: 0}, 
       to: animation && {x:0, opacity: 1},
       delay: 1500,
       config: config.slow
     });
 
     const spring = useSpring ({
-      from: animation && {x:100, opacity: 0 },
+      from: animation && {x:55, opacity: 0 },
       to: animation && {x:0, opacity: 1},
       config: config.slow,
       delay: 1300

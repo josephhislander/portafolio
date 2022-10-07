@@ -82,7 +82,7 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
          <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
       </AnimatedBox>
 
-      <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m='2rem'  fontFamily='Roboto Slab, Time new romans' spacing={{base:'10rem', md:'3rem'}}  flexGrow='1' pt={{base:'3rem', md:'initial'}} >
+      <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'5rem', md:'3rem'}}  flexGrow='1'  >
             {
               buttons.map((button, index) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
 
