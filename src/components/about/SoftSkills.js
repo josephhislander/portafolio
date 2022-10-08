@@ -29,7 +29,7 @@ export const SoftSkills = ({animation}) => {
     const trail = useTrail(data.length, { 
       from: animation && {  x:55, opacity: 0}, 
       to: animation && {x:0, opacity: 1},
-      delay: 1500,
+      delay: window.innerWidth > 500 ? 1500 : 2000,
       config: config.slow
     });
 

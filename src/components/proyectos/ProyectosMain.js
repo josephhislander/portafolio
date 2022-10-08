@@ -30,13 +30,13 @@ export const ProyectosMain = () => {
 
   const AnimatedHeading= animated(Heading);
   const spring = useSpring({
-    from:animation &&  {y: -500, opacity: 0},
+    from:animation &&  {y: -100, opacity: 0},
     to: animation && {y:0, opacity: 1},
     config : config.slow
   })
 
   return (
-    <Box id='proyectos'  pt='5rem'  h={{base:'100%'}} >
+    <Box id='proyectos'  pt='2rem'  h={{base:'100%'}} >
 
       {animation
         ?<AnimatedHeading style={spring} fontSize='2.2rem' align='center'> {t("projectsMain.title")} </AnimatedHeading>

@@ -22,9 +22,9 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
     })
   
     useEffect(() => {
-      if(window.pageYOffset < 1  ){ setToggleMenu(true);}
-      let lastScroll = window.pageYOffset;
-
+      if(window.pageYOffset < 1  ){
+          setToggleMenu(true);
+      }
     //   if(window.innerWidth  >  700 ){
     //     setCancel(true);
     // }
@@ -32,25 +32,9 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
       const handleScroll = ( ) => { 
         if (window.pageYOffset < 1 && window.innerWidth >= 700 ) {
           setToggleMenu(true);
-        } 
-        // else {
-        //   setToggleMenu(false)
-        // }
-
-        console.log(lastScroll);
-        if(window.innerWidth <= 500) {
-        if( !toggleMenuM &&  window.pageYOffset < (lastScroll - 50)  ) {
-                         console.log('suebiendo');
-                         setToggleButton(true);
-                         lastScroll = window.pageYOffset;
-                     } else if (window.pageYOffset > (lastScroll + 50) && !toggleMenuM) {
-                         console.log('bajando');
-                         setToggleButton(false);
-                         lastScroll = window.pageYOffset;
-                     }
-
-                    }
-        
+        } else {
+          setToggleMenu(false)
+        }
       }
       window.addEventListener('scroll', handleScroll);
       return () => {
@@ -58,33 +42,35 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
     }
     }, [])
 
-//     useEffect(() => {
+    useEffect(() => {
 
-//       if(window.innerWidth <= 500) {let lastScroll = window.pageYOffset;
-       
-//        const handleScroll = () => {
+      if(window.innerWidth <= 500) {
         
-//            if(window.pageYOffset < (lastScroll - 50)  && !toggleMenuM) {
-//                console.log('suebiendo');
-//                setToggleButton(true);
-//                lastScroll = window.pageYOffset
-//            } else if (window.pageYOffset > (lastScroll + 50) && !toggleMenuM) {
-//                console.log('bajando');
-//                setToggleButton(false);
-//                lastScroll = window.pageYOffset;
-//            }
+      let lastScroll = window.pageYOffset;
+       
+       const handleScroll = () => {
+        
+           if(window.pageYOffset > 100 && window.pageYOffset < (lastScroll - 50)  ) {
+               console.log('suebiendo');
+               setToggleButton(true);
+               lastScroll = window.pageYOffset
+           } else if (  window.pageYOffset > (lastScroll + 50) ) {
+               console.log('bajando');
+               setToggleButton(false);
+               lastScroll = window.pageYOffset;
+           }
 
 
-//        } 
+       } 
+      
 
-//        window.addEventListener('scroll', handleScroll)
+       window.addEventListener('scroll', handleScroll)
 
-//      return () => {
-//        window.removeEventListener('scroll', handleScroll);
+     return () => {
+       window.removeEventListener('scroll', handleScroll);
 
-//      }
-// }
-  //  }, [])
+     }}
+   }, [])
     
     return(
         <AnimatedBox pos={'relative'} zIndex={1} >
