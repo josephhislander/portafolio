@@ -7,21 +7,14 @@ import shoppingListMarcarPc from '../Imagenes/Pantallas/ShoppingList/Pc/shopping
 import shoppingListNuevaListaPC from '../Imagenes/Pantallas/ShoppingList/Pc/shoppingListNuevaListaPC.png';
 import shoppingListPresupuestoPc from '../Imagenes/Pantallas/ShoppingList/Pc/shoppingListPresupuestoPc.png';
 import shoppingListMv from '../Imagenes/Pantallas/ShoppingList/Movil/shoppingListMv.png';
-// import shoppingListPortadaMovil from '../Imagenes/Pantallas/ShoppingList/Movil/shoppingListPortadaMovil.png';
-// import shoppingListPantallaPrincipalMovil from '../Imagenes/Pantallas/ShoppingList/Movil/shoppingListPantallaPrincipalMovil.png';
-// import shoppingListListaMovil from '../Imagenes/Pantallas/ShoppingList/Movil/shoppingListListaMovil.png';
-
 import tresEnRayaHomePc from '../Imagenes/Pantallas/TresEnRaya/Pc/tresEnRayaHome.png';
 import tresEnRayaTutorialPc from '../Imagenes/Pantallas/TresEnRaya/Pc/tresEnRayaTutorial.png';
 import tresEnRayaPlayPc from '../Imagenes/Pantallas/TresEnRaya/Pc/tresEnRayaPlay.png';
 import tresEnRayaMv from '../Imagenes/Pantallas/TresEnRaya/Movil/tresEnRayaMv.png';
-
-
 import ahorcadoHomePc from '../Imagenes/Pantallas/Ahorcado/Pc/ahorcadoHome.png';
 import ahorcadoTutorialPc from '../Imagenes/Pantallas/Ahorcado/Pc/ahorcadoTutorial.png';
 import ahorcadoPlayPc from '../Imagenes/Pantallas/Ahorcado/Pc/ahorcadoPlay.png';
 import ahorcadoMv from '../Imagenes/Pantallas/Ahorcado/Movil/ahorcadoMv.png';
-
 import frontPageTresEnRaya from '../Imagenes/Pantallas/portada-tresEnRayaPc2.png';
 import frontPageAhorcado from '../Imagenes/Pantallas/portada-ahorcadoPc2.png';
 import  IconJs  from '../Iconos/js.png';
@@ -31,11 +24,6 @@ import  IconHtml  from '../Iconos/html-5.png';
 import  IconBootstrap  from '../Iconos/bootstrap.png';
 import  IconMongoDB  from '../Iconos/mongoDB.png';
 import  IconCss  from '../Iconos/css-3.png';
-// import { useTranslation } from 'react-i18next';
-
-
-// const [t] = useTranslation("global");
-
 
 export const proyectos = [
     {
@@ -104,9 +92,6 @@ export const proyectos = [
                 caption: "shoppingListMv"
                 
               },
-
-              
-
              ]
     }, 
     {

@@ -20,11 +20,8 @@ export const ParticlesBackground= () => {
   const props = useSpring({
     from: { opacity: 0, x:0},
     to: { opacity: 1},x: 1000,
-    // reset: true,
-    // reverse: flip,
     delay: 2000,
     config : config.default,
-    // onRest: () => set(!flip),
   })
 
   const AnimatedBox = animated(Box);
@@ -33,7 +30,5 @@ export const ParticlesBackground= () => {
   <AnimatedBox style={props} width="100%" height='100vh'>
     <Particles  width="100%" height='100vh' init={particlesInit} options={ particlesConfig(particlesColor)}  loaded={particlesLoaded}  />  
   </AnimatedBox>)
-
-
 }
  

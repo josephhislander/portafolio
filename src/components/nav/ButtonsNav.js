@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Stack, Text, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Stack, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { FiSun } from 'react-icons/fi';
 import { FiMoon } from 'react-icons/fi';
 import { Logo } from './Logo';
@@ -20,14 +20,11 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
   const AnimatedButton = animated(Button);
   const AnimatedBox = animated(Box);
   const AnimatedStack = animated(Stack);
-  // const buttons = ['INICIO','ACERCA DE MI','PROYECTOS','CONTACTO'];
   const buttonstraduction =   t("home.navButtons");
   const buttons = buttonstraduction.split("  ");
   const sections = ['home','about','proyectos','contacto'];
-  // console.log(buttonSplit)
 
   useEffect(() => {
-    // console.log(buttons1)
     const handleScroll = ( ) => { 
         setAnimationCancel(false);
   }
@@ -61,56 +58,51 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
 
   const lenguageControl = () => {
     setLenguage(!lenguage);
-
     lenguage ? i18n.changeLanguage("en")
             : i18n.changeLanguage("es")
   }
 
   const handleToggleMenuMovil = () => {
-
-
-      console.log('hola')
       setToggleMenuM(false)
       setToggleMenu(!toggleMenu); 
-    
   }
 
   return (
       <Box  pos="fixed"  bg={{base: navBackgroundColorTrans, md:  navBackgroundColor}}  display='flex' flexDirection={{base:'column', md:'row'}} flexGrow={{base:'1', md:'0'}} justifyContent={{base:'space-between'}} h={{base: '100vh', md: 'auto'}}  w='100%'    boxShadow='md'    p='2rem'  >
 
-      <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ props3 }>
-         <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
-      </AnimatedBox>
+        <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ props3 }>
+          <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
+        </AnimatedBox>
 
-      <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'5rem', md:'3rem'}}  flexGrow='1'  >
-            {
-              buttons.map((button, index) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
+        <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'5rem', md:'3rem'}}  flexGrow='1'  >
+              {
+                buttons.map((button, index) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
 
-              
-                 <Link
-                  activeClass="active"
-                  to={sections[index]}
-                  spy={true}
-                  smooth={true}
-                  // offset={-70}
-                  duration={1000}
-                  onClick={ handleToggleMenuMovil}
-                > 
-                  {button}
-                </Link>
+                
+                  <Link
+                    activeClass="active"
+                    to={sections[index]}
+                    spy={true}
+                    smooth={true}
+                    // offset={-70}
+                    duration={1000}
+                    onClick={ handleToggleMenuMovil}
+                  > 
+                    {button}
+                  </Link>
 
-              </AnimatedButton > )
-            }
-      </AnimatedStack>
+                </AnimatedButton > )
+              }
+        </AnimatedStack>
 
-      <Stack direction='row'  justifyContent='center'  align='center' flexGrow={{base:'1', md:'0'}}>
-            <AnimatedButton style={toggleAnimation ? props2 :{border: 'none'}} onClick={toggleColorMode} variant='ghost' border='none' fontSize='2.3rem'>
-            {colorMode === 'light' ? <FiSun  color='#ac7d03' /> : <FiMoon  color='#707070' __focus={{borde : 'none'}}/> }
-            </AnimatedButton>
-            <AnimatedButton w='2rem' color='#707070' style={toggleAnimation ? props2 :{border: 'none'}} onClick={lenguageControl}  variant='ghost' border='none' fontSize='2rem'>
-            {lenguage ? 'Es': 'En'}
-            </AnimatedButton>
-      </Stack>
+        <Stack direction='row'  justifyContent='center'  align='center' flexGrow={{base:'1', md:'0'}}>
+              <AnimatedButton style={toggleAnimation ? props2 :{border: 'none'}} onClick={toggleColorMode} variant='ghost' border='none' fontSize='2.3rem'>
+              {colorMode === 'light' ? <FiSun  color='#ac7d03' /> : <FiMoon  color='#707070' __focus={{borde : 'none'}}/> }
+              </AnimatedButton>
+              <AnimatedButton w='2rem' color='#707070' style={toggleAnimation ? props2 :{border: 'none'}} onClick={lenguageControl}  variant='ghost' border='none' fontSize='2rem'>
+              {lenguage ? 'Es': 'En'}
+              </AnimatedButton>
+        </Stack>
     </Box>
   )
 }

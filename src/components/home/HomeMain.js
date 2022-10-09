@@ -7,29 +7,20 @@ import { WelcomeEmpty } from './WelcomeEmpty'
 export const HomeMain = ({toggleMenuM, setToggleMenuM}) => {
   return (
     <Box id='home' pos='relative' zIndex={-1} >
-
-      
-
        <ParticlesBackground   />
-
         { window.innerWidth >= 500
           ?
           <Box>
-            {/* <ParticlesBackground   /> */}
             <Welcome toggleMenuM={toggleMenuM} setToggleMenu={setToggleMenuM}  />
           </Box>
           : (window.innerWidth <= 500 && toggleMenuM) ?
           <Box>
-           
             <WelcomeEmpty/>
           </Box>
-
           :
           <Box>
-            {/* <ParticlesBackground   /> */}
             <Welcome toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  />
           </Box>
-         
         }
     </Box>
   )

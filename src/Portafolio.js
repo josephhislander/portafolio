@@ -8,9 +8,7 @@ import { ProyectosMain } from "./components/proyectos/ProyectosMain";
 import { ContactoMain } from "./components/contacto/ContactoMain";
 
 export const Portafolio = () => {
-
     const [toggleMenuM, setToggleMenuM] = useState(true);
-
     return (
         <ChakraProvider theme={theme}>
             <Nav toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}/>

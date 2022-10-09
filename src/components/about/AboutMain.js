@@ -1,5 +1,5 @@
-import { Box, Text, useColorModeValue } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { SoftSkills } from './SoftSkills';
 import { Tecnologias } from './Tecnologias';
@@ -8,10 +8,9 @@ import { Tecnologias } from './Tecnologias';
 export const AboutMain = () => {
     const fuenteColor = useColorModeValue( 'brand.darkBlue','brand.white');
     const [animation, setAnimation] = useState(false);
-    const [t, i18n] = useTranslation("global");
+    const [t] = useTranslation("global");
   
     useEffect(() => {
-    
       const handleScroll = ( ) => { 
         if (window.pageYOffset >= 600) {
           setAnimation(true);

@@ -17,13 +17,10 @@ export const Proyecto = ({frontPage, title, shortDescription, technologies = [],
       })
 
 
-
   return (
    <Box  textAlign='justify'  id={title} pos='relative' zIndex={0}>
-        <Box display={{base:'block', lg: 'flex'}} mt='2rem' mb='1rem' pr='15%' pl='15%' >
-            
+        <Box display={{base:'block', lg: 'flex'}} mt='2rem' mb='1rem' pr='15%' pl='15%' > 
             <ProyectoCard frontPage={frontPage} left={left} code={code} production={production} />
-
             <Box flexGrow='1'  w={{base:'100%', lg: '100px'}} p='2rem'  >
                 <Heading  align='center' mb='1rem'>{title}</Heading>
                 <Text  mb='1rem'> {shortDescription}</Text>

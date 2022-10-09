@@ -1,21 +1,16 @@
-import React, {useRef, useEffect, useCallback} from 'react';
+import React, {useRef} from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
 import { FaAngleRight } from 'react-icons/fa';
-// import styled from 'styled-components';
-import { Box, Img, useColorModeValue } from '@chakra-ui/react';
+import { Box, Img} from '@chakra-ui/react';
 
 
 export const ProyectoCarrusel = ({children}) => {
-
-	// const navBackgroundColor = useColorModeValue(  'brand.darkBlue', 'brand.bone');
 	const slideshow = useRef(null);
 
 	const siguiente = () => {
-        console.log(slideshow)
-		// Comprobamos que el slideshow tenga elementos
+
 		if(slideshow.current.children.length > 0){
 			
-
 			// Obtenemos el primer elemento del slideshow.
 			const primerElemento = slideshow.current.children[0];
 
@@ -66,15 +61,12 @@ export const ProyectoCarrusel = ({children}) => {
 
 	return (
 		<Box pos='relative' w={{base:'100%', md:'70%'}} m='auto' mt='3rem'  borderRadius={{md:'2rem'}} userSelect='none' overflow='hidden'>
-
                 <Box  color='brand.bone' zIndex={2}  display='flex' alignItems='center' pos='absolute'   h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopLeftRadius={{md:'2rem'}} borderBottomLeftRadius={{md:'2rem'}}  onClick={anterior}>
                    <FaAngleLeft  fontSize='5rem'  />
                  </Box>
                  <Box  color='brand.bone' zIndex={2} display='flex' alignItems='center'  pos='absolute' right='0%' h='100%'  _hover={{bg:'black', opacity: '0.5'}} borderTopRightRadius={{md:'2rem'}} borderBottomRightRadius={{md:'2rem'}}  onClick={siguiente}>
                     <FaAngleRight fontSize='5rem'  /> 
                 </Box>
-			
-
 			<Box  display='flex' flexWrap='nowrap'  ref={slideshow} >
                 {children.map((imagen, index) => 
 
@@ -83,8 +75,6 @@ export const ProyectoCarrusel = ({children}) => {
                                             </Box>
                     )}
 			</Box>
-			
-                
 		</Box>
 	);
 }

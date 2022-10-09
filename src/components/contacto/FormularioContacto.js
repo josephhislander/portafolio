@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Button, Heading, Img, Input, Stack, Textarea, useDisclosure } from '@chakra-ui/react';
-import { FormControl, FormLabel, FormErrorMessage, FormHelperText, } from '@chakra-ui/react'
+import { Box, Button, Img, Input, Stack, Textarea, useDisclosure } from '@chakra-ui/react';
+import { FormControl, FormLabel} from '@chakra-ui/react'
 import topContac from '../../assets/Imagenes/topContac.png';
 import emailjs from '@emailjs/browser';
 import {
@@ -14,40 +14,29 @@ import {
 import { animated, config, useSpring } from 'react-spring';
 import { useTranslation } from 'react-i18next';
 
-
-
 export const FormularioContacto = () => {
 
+  const AnimatedFormLabel= animated(FormLabel);
+  const AnimatedButton = animated(Button);
   const [t] = useTranslation("global");
-    const [animation, setAnimation] = useState(false)
+  const [animation, setAnimation] = useState(false)
   useEffect(() => {
-    
     const handleScroll = ( ) => { 
       if (window.pageYOffset >= 1900) {
-
         setAnimation(true);
-
-      } else {
-        // setAnimation(false)
-      }
-    }
+      }}
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
   }
   }, [])
-
-  const AnimatedFormLabel= animated(FormLabel);
-  const AnimatedButton = animated(Button);
-
   const spring = useSpring({
     from: animation &&  { opacity: 0},
     to: animation && { opacity: 1},
     config : config.slow,
     delay: 500
   })
-
   const spring2 = useSpring({
     from: animation &&  { y: 50, opacity: 0},
     to: animation && { y:0, opacity: 1},
@@ -55,15 +44,11 @@ export const FormularioContacto = () => {
     delay: 500
   })
 
-
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = React.useRef()
-
     const form = useRef();
-
     const sendEmail = (e) => {
-        e.preventDefault();
-        
+      e.preventDefault();
       emailjs.sendForm('service_t70rm3o', 'template_5ibq1pr', form.current, 'tjglEOo7wUAqViFak')
         .then((result) => {
             onOpen();

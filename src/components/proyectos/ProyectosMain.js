@@ -1,5 +1,5 @@
-import { Accordion, Box, Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
+import { Accordion, Box, Heading } from '@chakra-ui/react'
 import { Proyecto } from './Proyecto'
 import {proyectos } from '../../assets/data/proyectosData'
 import { animated, config, useSpring } from 'react-spring'
@@ -14,9 +14,7 @@ export const ProyectosMain = () => {
     
     const handleScroll = ( ) => { 
       if (window.pageYOffset >= 800) {
-
         setAnimation(true);
-
       } else {
         // setAnimation(false)
       }
@@ -36,7 +34,7 @@ export const ProyectosMain = () => {
   })
 
   return (
-    <Box id='proyectos'  pt='2rem'  h={{base:'100%'}} >
+    <Box id='proyectos'  pt='1rem'  h={{base:'100%'}} >
 
       {animation
         ?<AnimatedHeading style={spring} fontSize='2.2rem' align='center'> {t("projectsMain.title")} </AnimatedHeading>
@@ -63,6 +61,4 @@ export const ProyectosMain = () => {
     </ Box >
   )
 }
-
-{/* <Proyecto  frontPage, title, shortDescription, technologies = [], origen ,funcionalidades,otrasTecnologias, Imgs, data,left, animation,code, production{...proyecto} key={i} animation={animation} /> */}
 

@@ -25,10 +25,6 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
       if(window.pageYOffset < 1  ){
           setToggleMenu(true);
       }
-    //   if(window.innerWidth  >  700 ){
-    //     setCancel(true);
-    // }
-
       const handleScroll = ( ) => { 
         if (window.pageYOffset < 1 && window.innerWidth >= 700 ) {
           setToggleMenu(true);

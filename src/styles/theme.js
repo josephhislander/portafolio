@@ -1,4 +1,3 @@
-
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
@@ -25,7 +24,6 @@ const colors = {
 const customComponents = {
   components: {
     Button: {
-      // 1. We can update the base styles
       baseStyle: {
         _focus: {
           boxShadow: 'none'
@@ -34,26 +32,11 @@ const customComponents = {
           bg:'none'
         } 
       },
- 
       variants: {
         'with-shadow': {
           bg: 'red.400',
           boxShadow: '0 0 2px 2px #efdfde',
         },
-    //     // 4. We can override existing variants
-    ghost: {
-      
-     
-          // _hover: {
-           
-          //   borderBottom: '0.5px solid #BBE1FA',
-          //   bg:'none',
-          // },
-          // _active:{
-          //   bg:'none',
-          //   color: 'brand.lightBlue'
-          // }
-        } 
       }
       ,
     },
@@ -92,9 +75,6 @@ const body = {
       }),
     },
   }
-
-
-
 
 export const theme = extendTheme(config, colors, body, customComponents)
 

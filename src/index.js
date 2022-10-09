@@ -1,6 +1,6 @@
-import { ColorModeScript } from '@chakra-ui/react';
 import React from 'react';
 import * as ReactDOM from 'react-dom/client'
+import { ColorModeScript } from '@chakra-ui/react';
 import { Portafolio } from './Portafolio';
 import { theme } from './styles/theme';
 import { I18nextProvider } from 'react-i18next';
@@ -20,7 +20,6 @@ i18next.init({
         },
     },
 });
-
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);

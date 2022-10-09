@@ -2,13 +2,11 @@ import React from 'react';
 import { Box, Img, Text } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
-import logoReact from '../../assets/Imagenes/logoReact.png'
 import { useTranslation } from 'react-i18next';
+import logoReact from '../../assets/Imagenes/logoReact.png'
 
 export const FootContacto = () => {
-
   const [t] = useTranslation("global");
-
   return (
     <Box >
         <Box display='flex' justifyContent='center' fontSize='5rem' gap='3rem' mt='2rem' mb='1rem'>
@@ -27,7 +25,6 @@ export const FootContacto = () => {
             <Img  src={logoReact} alt='logoReact' ></Img>
         </Box>
        </Box>
-
     </Box>
   )
 }

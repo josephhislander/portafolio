@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Box,  Img, Text, useColorModeValue } from '@chakra-ui/react';
-import { animated, config, easings, useSpring} from 'react-spring';
+import { animated, easings, useSpring} from 'react-spring';
 import { FaGithub } from 'react-icons/fa';
 import { FaDesktop } from 'react-icons/fa';
-// import { MdOutlineTouchApp } from 'react-icons/';
 import { MdTouchApp} from "react-icons/md";
-
-
 
 export const ProyectoCard = ({frontPage, left, code, production}) => {
 
@@ -44,13 +41,10 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
       to: {opacity: 0, y: 0},
       config : { mass: 1, tension: 150, friction: 60 , easing: easings.easeInElastic, },
       loop: true
-      // delay: 2400
     })
 
   return (
     <Box   display='flex' cursor='pointer' onClick={() => setFlipped(!flipped)}  alignSelf='center' flexGrow='1'   order= { left ? 0 : 1 } w={{base:'100%', lg: '100px'}}   >  
-
-        
         <AnimatedBox w='100%' style={{
             opacity,
             transform,
@@ -74,8 +68,6 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
           </Text>
         </Box>
         </AnimatedBox>
-
-        
     </Box>
   )
 }
