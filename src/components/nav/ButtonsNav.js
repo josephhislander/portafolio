@@ -68,7 +68,7 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
   }
 
   return (
-      <Box  pos="fixed"  bg={{base: navBackgroundColorTrans, md:  navBackgroundColor}}  display='flex' flexDirection={{base:'column', md:'row'}} flexGrow={{base:'1', md:'0'}} justifyContent={{base:'space-between'}} h={{base: '100vh', md: 'auto'}}  w='100%'    boxShadow='md'    p='2rem'  >
+      <Box  pos="fixed"  bg={{base: navBackgroundColorTrans, md:  navBackgroundColor}}  display='flex' flexDirection={{base:'column', md:'row'}} flexGrow={{base:'1', md:'0'}} justifyContent={{base:'space-between'}} h={{base: '100vh', md: 'auto'}}  w='100%'    boxShadow='md'    p='2rem'  zIndex={1000}>
 
         <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ props3 }>
           <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />

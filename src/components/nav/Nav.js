@@ -26,12 +26,15 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
           setToggleMenu(true);
       }
       const handleScroll = ( ) => { 
+       
         if (window.pageYOffset < 1 && window.innerWidth >= 700 ) {
           setToggleMenu(true);
-        } else {
+        } else if (window.pageYOffset > 1 && window.innerWidth >= 700 ){
           setToggleMenu(false)
         }
+        
       }
+
       window.addEventListener('scroll', handleScroll);
       return () => {
         window.removeEventListener('scroll', handleScroll);
@@ -39,35 +42,24 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
     }, [])
 
     useEffect(() => {
-
-      if(window.innerWidth <= 500) {
-        
+      if(window.innerWidth <= 500 && toggleMenu == false) {
       let lastScroll = window.pageYOffset;
-       
        const handleScroll = () => {
-        
-           if(window.pageYOffset > 100 && window.pageYOffset < (lastScroll - 50)  ) {
-               console.log('suebiendo');
+           if(window.pageYOffset > 100 && window.pageYOffset < (lastScroll - 25)  ) {
                setToggleButton(true);
                lastScroll = window.pageYOffset
-           } else if (  window.pageYOffset > (lastScroll + 50) ) {
-               console.log('bajando');
+           } else if (  window.pageYOffset > (lastScroll + 25) ) {
                setToggleButton(false);
                lastScroll = window.pageYOffset;
            }
-
-
        } 
-      
-
        window.addEventListener('scroll', handleScroll)
-
      return () => {
        window.removeEventListener('scroll', handleScroll);
+     }
+      }        
+    }, [toggleMenu])
 
-     }}
-   }, [])
-    
     return(
         <AnimatedBox pos={'relative'} zIndex={1} >
 

@@ -21,7 +21,7 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
 
     useEffect(() => {
     const handleScroll = ( ) => { 
-      if (window.pageYOffset >= 800 && window.innerWidth > 700) {
+      if (window.pageYOffset >= 1100 && window.innerWidth > 700) {
         setFlipped(true);
       }  else if (window.pageYOffset >= 1700 && window.innerWidth < 700) {
         setFlipped(true);
