@@ -62,9 +62,24 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
             : i18n.changeLanguage("es")
   }
 
+  const disableScroll =() => {  
+    let x = window.scrollX;
+    let y = window.scrollY;
+    window.onscroll = function(){ window.scrollTo(x, y) };
+}
+
+  const enableScroll= () => {  
+    window.onscroll = null;
+}
+
   const handleToggleMenuMovil = () => {
       setToggleMenuM(false)
       setToggleMenu(!toggleMenu); 
+      if(window.innerWidth <= 500 && !toggleMenu ){
+        disableScroll();
+    } else if(window.innerWidth <= 500 && toggleMenu) {
+        enableScroll();
+    }
   }
 
   return (
@@ -73,8 +88,8 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
         <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ props3 }>
           <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
         </AnimatedBox>
-
-        <AnimatedStack  style={{base: {border: 'none'}, md: (toggleAnimation && props)}}   direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'5rem', md:'3rem'}}  flexGrow='1'  >
+        {/* style={{base: {border: 'none'}, md: (toggleAnimation && props)}}  */}
+        <AnimatedStack    direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'5rem', md:'3rem'}}  flexGrow='1'  >
               {
                 buttons.map((button, index) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
 

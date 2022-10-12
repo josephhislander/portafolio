@@ -63,6 +63,7 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
     return(
         <AnimatedBox pos={'relative'} zIndex={100} >
 
+          
             <AnimatedBox style={ spring }>
               <ButtonsNav  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  lenguage={lenguage} setLenguage={setLenguage} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} toggleAnimation= {toggleAnimation} setToggleAnimation={setToggleAnimation} Cancel={Cancel} />
             </AnimatedBox>
