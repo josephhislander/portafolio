@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.1c9dcdd7.js",
+    "main.js": "/static/js/main.2497cc3e.js",
     "static/js/937.4ab3e856.chunk.js": "/static/js/937.4ab3e856.chunk.js",
     "static/media/ahorcadoPlay.png": "/static/media/ahorcadoPlay.498215034a4fe4417779.png",
     "static/media/ahorcadoHome.png": "/static/media/ahorcadoHome.dc70227d2366a3288f58.png",
@@ -26,10 +26,10 @@
     "static/media/portada-tresEnRayaPc2.png": "/static/media/portada-tresEnRayaPc2.8345217c8912d66436cd.png",
     "static/media/logo-light.png": "/static/media/logo-light.03861907d15615e73944.png",
     "index.html": "/index.html",
-    "main.1c9dcdd7.js.map": "/static/js/main.1c9dcdd7.js.map",
+    "main.2497cc3e.js.map": "/static/js/main.2497cc3e.js.map",
     "937.4ab3e856.chunk.js.map": "/static/js/937.4ab3e856.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.1c9dcdd7.js"
+    "static/js/main.2497cc3e.js"
   ]
 }
