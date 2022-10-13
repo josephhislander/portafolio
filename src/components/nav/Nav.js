@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Box } from '@chakra-ui/react';
+import { Box, Fade } from '@chakra-ui/react';
 import { useEffect } from "react";
 import { ButtonLogoNav } from "./ButtonLogoNav";
 import { ButtonsNav } from "./ButtonsNav";
-import { animated, config, useSpring } from "react-spring";
+import { animated } from "react-spring";
 
 
 export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
@@ -15,22 +15,19 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
     const [Cancel, setCancel] = useState(false)
     const [toggleButton, setToggleButton] = useState(true)
 
-    const spring = useSpring({
-     from: toggleMenu ?  {y: (window.pageYOffset - 2000)} : {y: window.pageYOffset},
-      to:   toggleMenu ? {y: window.pageYOffset} : {y: ( - 2000)},
-      config : config.slow,
-    })
-  
+
     useEffect(() => {
       if(window.pageYOffset < 1  ){
           setToggleMenu(true);
       }
       const handleScroll = ( ) => { 
        
+        
         if (window.pageYOffset < 1 && window.innerWidth >= 700 ) {
           setToggleMenu(true);
         } else if (window.pageYOffset > 1 && window.innerWidth >= 700 ){
-          setToggleMenu(false)
+          setToggleMenu(false);
+          setToggleMenuM(false);
         }
         
       }
@@ -63,14 +60,24 @@ export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
     return(
         <AnimatedBox pos={'relative'} zIndex={100} >
 
-          
-            <AnimatedBox style={ spring }>
-              <ButtonsNav  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  lenguage={lenguage} setLenguage={setLenguage} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} toggleAnimation= {toggleAnimation} setToggleAnimation={setToggleAnimation} Cancel={Cancel} />
-            </AnimatedBox>
+          {toggleMenu ?
+
+     
+              <Fade in={toggleMenu}>
+
+                <ButtonsNav  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  lenguage={lenguage} setLenguage={ setLenguage} setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} toggleAnimation= {toggleAnimation} setToggleAnimation={setToggleAnimation} Cancel={Cancel} />
+              </Fade>
+
+          : !toggleMenu && toggleButton ?
     
-          { !toggleMenu  && toggleButton &&
+          
              <ButtonLogoNav  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM} Cancel={Cancel} setCancel={setCancel}   setToggleMenu={setToggleMenu}  toggleMenu={toggleMenu} /> 
+          :
+
+          
+          <Box></Box>
            }
         </AnimatedBox>   
     )
+
 }

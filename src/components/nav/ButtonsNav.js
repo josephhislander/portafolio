@@ -8,11 +8,10 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { useTranslation } from 'react-i18next';
 
 
-export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMenu, toggleAnimation, setToggleAnimation, Cancel,lenguage, setLenguage }) => {
+export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMenu,lenguage, setLenguage }) => {
 
   const [t, i18n] = useTranslation("global");
- 
-  const [animationCancel, setAnimationCancel] = useState(true)
+
   const { colorMode, toggleColorMode } = useColorMode();
   const botonFuenteColor = useColorModeValue( 'brand.blue','brand.bone');
   const navBackgroundColor = useColorModeValue( 'brand.bone', 'brand.darkBlue');
@@ -24,16 +23,7 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
   const buttons = buttonstraduction.split("  ");
   const sections = ['home','about','proyectos','contacto'];
 
-  useEffect(() => {
-    const handleScroll = ( ) => { 
-        setAnimationCancel(false);
-  }
-  window.addEventListener('scroll', handleScroll);
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-}
 
-  }, [])
   
   const props = useSpring({
     from: { x: -1000, opacity: 0},
@@ -50,8 +40,8 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
   })
 
   const props3 = useSpring({
-    from: { opacity: 0, rotateZ: 0 },
-    to: { opacity: 1, rotateZ: 360 },
+    from:  { opacity: 0, rotateZ: 0 },
+    to:  { opacity: 1, rotateZ: 360 },
     delay: 2000,
     config : { mass: 1, tension: 280, friction: 60 , easing: easings.easeInElastic, },
   })
@@ -62,36 +52,23 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
             : i18n.changeLanguage("es")
   }
 
-  const disableScroll =() => {  
-    let x = window.scrollX;
-    let y = window.scrollY;
-    window.onscroll = function(){ window.scrollTo(x, y) };
-}
-
-  const enableScroll= () => {  
-    window.onscroll = null;
-}
 
   const handleToggleMenuMovil = () => {
       setToggleMenuM(false)
       setToggleMenu(!toggleMenu); 
-      if(window.innerWidth <= 500 && !toggleMenu ){
-        disableScroll();
-    } else if(window.innerWidth <= 500 && toggleMenu) {
-        enableScroll();
-    }
+
   }
 
   return (
       <Box  pos="fixed"  bg={{base: navBackgroundColorTrans, md:  navBackgroundColor}}  display='flex' flexDirection={{base:'column', md:'row'}} flexGrow={{base:'1', md:'0'}} justifyContent={{base:'space-between'}} h={{base: '100vh', md: 'auto'}}  w='100%'    boxShadow='md'    p='2rem'  zIndex={1000}>
 
-        <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ props3 }>
+        <AnimatedBox w={{base:'10rem', md:'auto'}}   style={ toggleMenuM ? props3 : {border: 'none'} }>
           <Logo  toggleMenuM={toggleMenuM} setToggleMenuM={setToggleMenuM}  setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
         </AnimatedBox>
         {/* style={{base: {border: 'none'}, md: (toggleAnimation && props)}}  */}
         <AnimatedStack    direction={{base:'column', md:'row'}} justifyContent={{base:'space-around', md:'initial'}} m={{md:'2rem'}}  fontFamily='Roboto Slab, Time new romans' spacing={{base:'5rem', md:'3rem'}}  flexGrow='1'  >
               {
-                buttons.map((button, index) =>  <AnimatedButton   style={props} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
+                buttons.map((button, index) =>  <AnimatedButton   style={ toggleMenuM ? props : {border: 'none'}} variant='ghost' color={botonFuenteColor} fontSize= '2.3rem' key={index} >
 
                 
                   <Link
@@ -111,10 +88,10 @@ export const ButtonsNav = ({ toggleMenuM, setToggleMenuM,setToggleMenu, toggleMe
         </AnimatedStack>
 
         <Stack direction='row'  justifyContent='center'  align='center' flexGrow={{base:'1', md:'0'}}>
-              <AnimatedButton style={toggleAnimation ? props2 :{border: 'none'}} onClick={toggleColorMode} variant='ghost' border='none' fontSize='2.3rem'>
+              <AnimatedButton style={toggleMenuM ? props2 :{border: 'none'}} onClick={toggleColorMode} variant='ghost' border='none' fontSize='2.3rem'>
               {colorMode === 'light' ? <FiSun  color='#ac7d03' /> : <FiMoon  color='#707070' __focus={{borde : 'none'}}/> }
               </AnimatedButton>
-              <AnimatedButton w='2rem' color='#707070' style={toggleAnimation ? props2 :{border: 'none'}} onClick={lenguageControl}  variant='ghost' border='none' fontSize='2rem'>
+              <AnimatedButton w='2rem' color='#707070' style={toggleMenuM ? props2 :{border: 'none'}} onClick={lenguageControl}  variant='ghost' border='none' fontSize='2rem'>
               {lenguage ? 'Es': 'En'}
               </AnimatedButton>
         </Stack>
