@@ -11,7 +11,7 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
     const AnimatedImg = animated(Img);
     const IconBackgroundColor = useColorModeValue( 'brand.bone', 'brand.darkBlue');
     const navBackgroundColor = useColorModeValue(  'brand.darkBlue', 'brand.bone');
-    const [flipped, setFlipped] = useState(false);
+    const [flipped, setFlipped] = useState(true);
     const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
@@ -21,13 +21,13 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
 
     useEffect(() => {
     const handleScroll = ( ) => { 
-      if (window.pageYOffset >= 1100 && window.innerWidth > 700) {
-        setFlipped(true);
-      }  else if (window.pageYOffset >= 1700 && window.innerWidth < 700) {
-        setFlipped(true);
-      } else {
-        setFlipped(false);
-      }
+      // if (window.pageYOffset >= 1100 && window.innerWidth > 700) {
+      //   setFlipped(true);
+      // }  else if (window.pageYOffset >= 1700 && window.innerWidth < 700) {
+      //   setFlipped(true);
+      // } else {
+      //   setFlipped(false);
+      // }
     }
     window.addEventListener('scroll', handleScroll);
     return () => {
