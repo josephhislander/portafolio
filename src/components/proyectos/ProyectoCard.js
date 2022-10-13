@@ -19,22 +19,22 @@ export const ProyectoCard = ({frontPage, left, code, production}) => {
     loop: true 
     });
 
-    useEffect(() => {
-    const handleScroll = ( ) => { 
-      // if (window.pageYOffset >= 1100 && window.innerWidth > 700) {
-      //   setFlipped(true);
-      // }  else if (window.pageYOffset >= 1700 && window.innerWidth < 700) {
-      //   setFlipped(true);
-      // } else {
-      //   setFlipped(false);
-      // }
-    }
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      console.log(flipped);
-    }
-    }, [])
+    // useEffect(() => {
+    // const handleScroll = ( ) => { 
+    //   // if (window.pageYOffset >= 1100 && window.innerWidth > 700) {
+    //   //   setFlipped(true);
+    //   // }  else if (window.pageYOffset >= 1700 && window.innerWidth < 700) {
+    //   //   setFlipped(true);
+    //   // } else {
+    //   //   setFlipped(false);
+    //   // }
+    // }
+    // window.addEventListener('scroll', handleScroll);
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll);
+    //   console.log(flipped);
+    // }
+    // }, [])
 
     const spring = useSpring ({
       from: { opacity: 0.5, y: -10},
