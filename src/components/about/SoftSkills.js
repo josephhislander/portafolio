@@ -20,7 +20,7 @@ export const SoftSkills = ({animation}) => {
       { key: '1', icon:<FaPeopleCarry />, skill: softSkillSplit[1]},
       { key: '2', icon:<FaClock />, skill: softSkillSplit[2]},
       { key: '3', icon:<FaBolt />, skill: softSkillSplit[3]},
-      { key: '4', icon:<FaHandshake />, skill: softSkillSplit[4]},
+     
     ]
 
   const trail = useTrail(data.length, { 

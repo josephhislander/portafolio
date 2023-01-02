@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,  useEffect } from "react";
+import { animated, config, useSpring } from "react-spring";
 import { Box, Fade } from '@chakra-ui/react';
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { ButtonLogoNav } from "./ButtonLogoNav";
 import { ButtonsNav } from "./ButtonsNav";
-import { animated, config, useSpring } from "react-spring";
 
 
 export  const Nav =  ({toggleMenuM, setToggleMenuM}) => {
